@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_textview,R.id.list_item_textview, listData);
         ListView my_listview = (ListView) findViewById(R.id.my_listview);
 
@@ -28,11 +31,10 @@ public class MainActivity extends AppCompatActivity {
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Ange en text", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Rostat bröd är gött även i bergen.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
     }
 }
